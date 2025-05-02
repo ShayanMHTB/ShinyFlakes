@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  # PostgreSQL - DBMS
+  dbs:
+
+  # AdonisJS - Backend
+  srv:
+
+  # NuxtJS - Frontend
+  web:
+
+networks:
