@@ -73,7 +73,7 @@ router
       .prefix('/orders')
       .use('auth:api');
   })
-  .prefix('/api');
+  .prefix('/api/v1');
 
 // Catch-all route for API - return 404 JSON instead of HTML
 router.any('*', async ({ response }) => {
