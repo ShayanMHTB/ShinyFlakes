@@ -84,7 +84,7 @@ export const useWishlistStore = defineStore('wishlist', () => {
 
   const moveAllToCart = () => {
     const cartStore = useCartStore();
-    const movedItems = [];
+    const movedItems: number[] = [];
 
     items.value.forEach((item) => {
       if (item.product.inStock) {
@@ -148,13 +148,13 @@ export const useWishlistStore = defineStore('wishlist', () => {
   };
 
   const saveToLocalStorage = () => {
-    if (process.client) {
+    if (import.meta.client) {
       localStorage.setItem('shinyflakes_wishlist', JSON.stringify(items.value));
     }
   };
 
   const loadFromLocalStorage = () => {
-    if (process.client) {
+    if (import.meta.client) {
       const saved = localStorage.getItem('shinyflakes_wishlist');
       if (saved) {
         try {
